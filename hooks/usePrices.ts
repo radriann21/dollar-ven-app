@@ -8,3 +8,17 @@ export const usePrices = () => {
     queryFn: () => pricesApi.getLastPrices(),
   });
 };
+
+export const useActualGap = () => {
+  return useQuery({
+    queryKey: queryKeys.gap.actual,
+    queryFn: () => pricesApi.getActualGap(),
+  });
+};
+
+export const useReferentialDollar = () => {
+  return useQuery({
+    queryKey: queryKeys.analitics.referential,
+    queryFn: () => pricesApi.getReferentialDollar(),
+  });
+};

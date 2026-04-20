@@ -5,6 +5,7 @@ interface DollarPriceCard {
   price?: number;
   source?: string;
   officialName?: string;
+  loading?: boolean;
 }
 
 export function DollarPriceCard({
@@ -52,17 +53,6 @@ export function DollarPriceCard({
           </H2>
           <Text fontSize={16} fontWeight="700" color="$gray10">
             VES
-          </Text>
-        </XStack>
-
-        <XStack alignItems="center" gap="$1">
-          <MaterialCommunityIcons
-            name="trending-up"
-            size={16}
-            color="#0D7A5E"
-          />
-          <Text fontSize={13} fontWeight="600" color="#0D7A5E">
-            +0.12% Today
           </Text>
         </XStack>
       </YStack>
