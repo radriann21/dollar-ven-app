@@ -1,7 +1,18 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { H2, H5, Text, View, XStack, YStack } from "tamagui";
 
-export function DollarPriceCard() {
+interface DollarPriceCard {
+  price?: number;
+  source?: string;
+  officialName?: string;
+  loading?: boolean;
+}
+
+export function DollarPriceCard({
+  price,
+  source,
+  officialName,
+}: DollarPriceCard) {
   return (
     <View
       backgroundColor="white"
@@ -23,10 +34,10 @@ export function DollarPriceCard() {
             color="$gray10"
             letterSpacing={1}
           >
-            OFICIAL BCV
+            {source}
           </Text>
-          <H5 fontWeight="800" color="$gray12">
-            Banco Central
+          <H5 fontWeight="800" color="$gray12" width="92%">
+            {officialName}
           </H5>
         </YStack>
 
@@ -38,21 +49,10 @@ export function DollarPriceCard() {
       <YStack gap="$2" marginTop="$2">
         <XStack alignItems="baseline" gap="$2">
           <H2 fontWeight="900" color="$gray12">
-            36.50
+            {price}
           </H2>
           <Text fontSize={16} fontWeight="700" color="$gray10">
             VES
-          </Text>
-        </XStack>
-
-        <XStack alignItems="center" gap="$1">
-          <MaterialCommunityIcons
-            name="trending-up"
-            size={16}
-            color="#0D7A5E"
-          />
-          <Text fontSize={13} fontWeight="600" color="#0D7A5E">
-            +0.12% Today
           </Text>
         </XStack>
       </YStack>
