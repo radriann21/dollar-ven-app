@@ -2,7 +2,7 @@ import { useActualGap } from "@/hooks/usePrices";
 import { Card, H2, Text } from "tamagui";
 
 export const ActualGap = () => {
-  const { data: gapData, isError, isPending } = useActualGap();
+  const { data: gapData, isError } = useActualGap();
 
   return (
     <Card
